@@ -8,7 +8,7 @@ part of 'main.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<GoRoute> get $appRoutes => [
+List<GoRoute> get $mainRoutes => [
       $homeRoute,
       $loginRoute,
     ];

@@ -45,9 +45,12 @@ class GoRouterGenerator extends GeneratorForAnnotation<void> {
       return '';
     }
 
+    final String fileName = buildStep.inputId.pathSegments.last;
+    final String name = fileName.replaceAll('.dart', '').firstLowerCase;
+
     return <String>[
       '''
-List<GoRoute> get \$appRoutes => [
+List<GoRoute> get \$${name}Routes => [
 ${getters.map((String e) => "$e,").join('\n')}
     ];
 ''',
@@ -84,3 +87,7 @@ ${getters.map((String e) => "$e,").join('\n')}
 const TypeChecker _goRouteDataChecker = TypeChecker.fromUrl(
   'package:go_router/src/route_data.dart#GoRouteData',
 );
+
+extension on String {
+  String get firstLowerCase => this[0].toLowerCase() + substring(1);
+}

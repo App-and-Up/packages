@@ -2,32 +2,27 @@
 
 // ignore_for_file: always_specify_types, public_member_api_docs
 
-part of 'simple_example.dart';
+part of 'unauth.dart';
 
 // **************************************************************************
 // GoRouterGenerator
 // **************************************************************************
 
-List<GoRoute> get $simple_exampleRoutes => [
-      $homeRoute,
+List<GoRoute> get $unauthRoutes => [
+      $loginRoute,
+      $signupRoute,
     ];
 
-GoRoute get $homeRoute => GoRouteData.$route(
-      path: '/',
-      factory: $HomeRouteExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: 'family/:familyId',
-          factory: $FamilyRouteExtension._fromState,
-        ),
-      ],
+GoRoute get $loginRoute => GoRouteData.$route(
+      path: '/login',
+      factory: $LoginRouteExtension._fromState,
     );
 
-extension $HomeRouteExtension on HomeRoute {
-  static HomeRoute _fromState(GoRouterState state) => const HomeRoute();
+extension $LoginRouteExtension on LoginRoute {
+  static LoginRoute _fromState(GoRouterState state) => const LoginRoute();
 
   String get location => GoRouteData.$location(
-        '/',
+        '/login',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -38,13 +33,16 @@ extension $HomeRouteExtension on HomeRoute {
       context.pushReplacement(location);
 }
 
-extension $FamilyRouteExtension on FamilyRoute {
-  static FamilyRoute _fromState(GoRouterState state) => FamilyRoute(
-        state.params['familyId']!,
-      );
+GoRoute get $signupRoute => GoRouteData.$route(
+      path: '/signup',
+      factory: $SignupRouteExtension._fromState,
+    );
+
+extension $SignupRouteExtension on SignupRoute {
+  static SignupRoute _fromState(GoRouterState state) => const SignupRoute();
 
   String get location => GoRouteData.$location(
-        '/family/${Uri.encodeComponent(familyId)}',
+        '/signup',
       );
 
   void go(BuildContext context) => context.go(location);

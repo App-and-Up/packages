@@ -8,7 +8,7 @@ part of 'all_types.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<GoRoute> get $appRoutes => [
+List<GoRoute> get $all_typesRoutes => [
       $allTypesBaseRoute,
     ];
 

@@ -23,7 +23,7 @@ class App extends StatelessWidget {
         title: _appTitle,
       );
 
-  final GoRouter _router = GoRouter(routes: $appRoutes);
+  final GoRouter _router = GoRouter(routes: $simple_exampleRoutes);
 }
 
 @TypedGoRoute<HomeRoute>(

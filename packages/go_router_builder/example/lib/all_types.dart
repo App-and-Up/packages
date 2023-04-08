@@ -557,7 +557,7 @@ class AllTypesApp extends StatelessWidget {
 
   late final GoRouter _router = GoRouter(
     debugLogDiagnostics: true,
-    routes: $appRoutes,
+    routes: $all_typesRoutes,
     initialLocation: const AllTypesBaseRoute().location,
   );
 }

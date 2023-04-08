@@ -34,7 +34,7 @@ class App extends StatelessWidget {
 
   late final GoRouter _router = GoRouter(
     debugLogDiagnostics: true,
-    routes: $appRoutes,
+    routes: $mainRoutes,
 
     // redirect to the login page if the user is not logged in
     redirect: (BuildContext context, GoRouterState state) {
